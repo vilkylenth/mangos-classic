@@ -16,23 +16,24 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "Object.h"
-#include "Player.h"
+#include "Entities/Object.h"
+#include "Entities/Player.h"
 #include "BattleGround.h"
 #include "BattleGroundMgr.h"
-#include "Creature.h"
-#include "MapManager.h"
-#include "Language.h"
-#include "SpellAuras.h"
-#include "World.h"
-#include "Group.h"
-#include "ObjectGuid.h"
-#include "ObjectMgr.h"
-#include "Mail.h"
+#include "Entities/Creature.h"
+#include "Maps/MapManager.h"
+#include "Tools/Language.h"
+#include "Spells/SpellAuras.h"
+#include "World/World.h"
+#include "Groups/Group.h"
+#include "Entities/ObjectGuid.h"
+#include "Globals/ObjectMgr.h"
+#include "Globals/ObjectAccessor.h"
+#include "Mails/Mail.h"
 #include "WorldPacket.h"
-#include "Formulas.h"
-#include "GridNotifiersImpl.h"
-#include "Chat.h"
+#include "Tools/Formulas.h"
+#include "Grids/GridNotifiersImpl.h"
+#include "Chat/Chat.h"
 
 #include <cstdarg>
 
@@ -206,9 +207,6 @@ BattleGround::BattleGround(): m_BuffChange(false), m_StartDelayTime(0), m_startM
 
     m_BgRaids[TEAM_INDEX_ALLIANCE]         = nullptr;
     m_BgRaids[TEAM_INDEX_HORDE]            = nullptr;
-
-    m_PlayersCount[TEAM_INDEX_ALLIANCE]    = 0;
-    m_PlayersCount[TEAM_INDEX_HORDE]       = 0;
 
     m_PlayersCount[TEAM_INDEX_ALLIANCE]    = 0;
     m_PlayersCount[TEAM_INDEX_HORDE]       = 0;
